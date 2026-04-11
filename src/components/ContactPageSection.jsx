@@ -1,5 +1,88 @@
+import { useEffect, useRef, useState } from 'react'
 import PlatformIcon from './PlatformIcon'
 import { contactPageContent, siteConfig } from '../data/content'
+
+function CustomSelect({ id, label, options, defaultValue }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [selected, setSelected] = useState(defaultValue)
+  const wrapperRef = useRef(null)
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setIsOpen(false)
+      }
+    }
+
+    function handleEscape(event) {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleEscape)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [])
+
+  return (
+    <div className="field-group">
+      <label htmlFor={id}>{label}</label>
+      <div
+        ref={wrapperRef}
+        className={`custom-select ${isOpen ? 'is-open' : ''}`}
+      >
+        <button
+          id={id}
+          className="custom-select-trigger"
+          type="button"
+          aria-expanded={isOpen}
+          aria-haspopup="listbox"
+          onClick={() => setIsOpen((value) => !value)}
+        >
+          <span>{selected}</span>
+          <span className="select-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="m7 10 5 5 5-5"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+            </svg>
+          </span>
+        </button>
+
+        <input type="hidden" name={id} value={selected} />
+
+        {isOpen ? (
+          <div className="custom-select-menu" role="listbox" aria-labelledby={id}>
+            {options.map((option) => (
+              <button
+                key={option}
+                className={`custom-select-option ${selected === option ? 'is-selected' : ''}`}
+                type="button"
+                role="option"
+                aria-selected={selected === option}
+                onClick={() => {
+                  setSelected(option)
+                  setIsOpen(false)
+                }}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </div>
+  )
+}
 
 function ContactPageSection() {
   return (
@@ -74,18 +157,12 @@ function ContactPageSection() {
                   </div>
                 </div>
 
-                <div className="field-group">
-                  <label htmlFor="helpTopic">
-                    {contactPageContent.form.fields.subject}
-                  </label>
-                  <select id="helpTopic" name="helpTopic" defaultValue={contactPageContent.form.options[0]}>
-                    {contactPageContent.form.options.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+                <CustomSelect
+                  id="helpTopic"
+                  label={contactPageContent.form.fields.subject}
+                  options={contactPageContent.form.options}
+                  defaultValue={contactPageContent.form.options[0]}
+                />
 
                 <div className="field-group">
                   <label htmlFor="message">
@@ -105,27 +182,6 @@ function ContactPageSection() {
                 </button>
               </form>
             </div>
-
-            <div className="response-chip">
-              <div className="response-chip-bubble">
-                <span className="material-symbols-outlined">schedule</span>
-                <span>{contactPageContent.responseNote}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="contact-page-footer-note">
-          <div className="contact-footer-branding">
-            <span className="brand brand-footer">{siteConfig.brand}</span>
-            <p className="footer-copy">
-              © 2026 {siteConfig.owner}. {siteConfig.footerNote}
-            </p>
-          </div>
-
-          <div className="contact-page-badge">
-            <span className="material-symbols-outlined filled">favorite</span>
-            <span>{contactPageContent.footerBadge}</span>
           </div>
         </div>
       </div>

@@ -32,6 +32,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
+  const emailHref = siteConfig.socialLinks.email || `mailto:${siteConfig.email}`
 
   useEffect(() => {
     setIsOpen(false)
@@ -55,7 +56,13 @@ function Navbar() {
               {link.label}
             </button>
           ))}
-          <a className="button button-primary button-small" href={`mailto:${siteConfig.email}`}>
+          <a
+            className="button button-primary button-small"
+            href={emailHref}
+            onClick={() => {
+              window.location.href = emailHref
+            }}
+          >
             Hubungi Saya
           </a>
         </nav>
@@ -83,7 +90,13 @@ function Navbar() {
               {link.label}
             </button>
           ))}
-          <a className="button button-primary" href={`mailto:${siteConfig.email}`}>
+          <a
+            className="button button-primary"
+            href={emailHref}
+            onClick={() => {
+              window.location.href = emailHref
+            }}
+          >
             Hubungi Saya
           </a>
         </nav>

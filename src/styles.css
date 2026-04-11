@@ -137,6 +137,13 @@ img {
   color: #ffffff;
 }
 
+.desktop-nav .button-primary:hover,
+.desktop-nav .button-primary:focus-visible,
+.mobile-panel-nav .button-primary:hover,
+.mobile-panel-nav .button-primary:focus-visible {
+  color: #ffffff;
+}
+
 .nav-link-button {
   padding: 0;
   border: 0;
@@ -1620,7 +1627,6 @@ img {
 }
 
 .field-group input,
-.field-group select,
 .field-group textarea {
   width: 100%;
   padding: 18px 22px;
@@ -1634,7 +1640,6 @@ img {
 }
 
 .field-group input:focus,
-.field-group select:focus,
 .field-group textarea:focus {
   box-shadow: 0 0 0 2px rgba(107, 57, 214, 0.24);
 }
@@ -1642,6 +1647,101 @@ img {
 .field-group textarea {
   resize: vertical;
   min-height: 150px;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 22px;
+  border: 0;
+  border-radius: 22px;
+  color: var(--text);
+  background: rgba(238, 242, 245, 0.92);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  transition:
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.custom-select-trigger:hover {
+  background: rgba(233, 238, 243, 0.98);
+}
+
+.custom-select.is-open .custom-select-trigger,
+.custom-select-trigger:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(107, 57, 214, 0.24);
+}
+
+.select-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: transform 180ms ease;
+}
+
+.custom-select.is-open .select-arrow {
+  transform: rotate(180deg);
+}
+
+.select-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.custom-select-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  z-index: 12;
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(107, 57, 214, 0.14);
+  border-radius: 24px;
+  box-shadow: 0 22px 48px rgba(44, 47, 49, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.custom-select-option {
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  border-radius: 16px;
+  color: var(--text);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease,
+    color 160ms ease;
+}
+
+.custom-select-option:hover {
+  background: rgba(107, 57, 214, 0.08);
+  transform: translateX(2px);
+}
+
+.custom-select-option.is-selected {
+  color: #fff;
+  background: linear-gradient(135deg, #7a46ef, var(--primary));
+  box-shadow: 0 10px 20px rgba(107, 57, 214, 0.18);
 }
 
 .contact-submit {
