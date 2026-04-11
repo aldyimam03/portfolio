@@ -18,7 +18,7 @@ function ContactSection() {
           </a>
           <Link className="button button-secondary" to="/contact">
             <span className="material-symbols-outlined">forum</span>
-            Open Contact Page
+            Buka Halaman Kontak
           </Link>
         </div>
 

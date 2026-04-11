@@ -14,7 +14,7 @@ function Footer() {
           </p>
         </div>
 
-        <div className="footer-socials" aria-label="Social links">
+        <div className="footer-socials" aria-label="Tautan sosial">
           {socialIcons.map((item) => (
             <a key={item.icon} href={item.href} aria-label={item.label}>
               <span className="material-symbols-outlined">{item.icon}</span>

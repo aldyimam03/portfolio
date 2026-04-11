@@ -31,7 +31,7 @@ function SkillsPageSection() {
           <div className="skills-profile-image-wrap">
             <img
               src={skillsPageContent.profileImage}
-              alt="Portrait of the developer in a bright modern studio"
+              alt="Potret developer di studio modern dengan pencahayaan terang"
             />
           </div>
           <div className="skills-profile-glow" aria-hidden="true" />
@@ -62,7 +62,7 @@ function SkillsPageSection() {
 
       <section className="skills-groups">
         <div className="skills-group">
-          <SkillsDivider title="Frontend Magic" tone="primary-dim" />
+          <SkillsDivider title="Integrasi Frontend" tone="primary-dim" />
           <div className="frontend-bubbles">
             {frontendSkillBubbles.map((bubble) => (
               <article key={bubble.label} className="frontend-bubble">
@@ -76,7 +76,7 @@ function SkillsPageSection() {
         </div>
 
         <div className="skills-group">
-          <SkillsDivider title="Backend Brain" tone="secondary" reverse />
+          <SkillsDivider title="Fondasi Backend" tone="secondary" reverse />
           <div className="backend-skill-grid">
             {backendSkills.map((skill) => (
               <article key={skill.label} className="backend-skill-card">
@@ -88,7 +88,7 @@ function SkillsPageSection() {
         </div>
 
         <div className="skills-group">
-          <SkillsDivider title="Tools I Use" tone="tertiary" />
+          <SkillsDivider title="Tools Yang Saya Pakai" tone="tertiary" />
           <div className="tool-pill-grid">
             {toolPills.map((tool) => (
               <span key={tool} className="tool-pill">
@@ -120,7 +120,7 @@ function SkillsPageSection() {
         </div>
 
         <div className="glass-stack-footer">
-          <p>The Fullstack Experience</p>
+          <p>Fondasi Kerja Fullstack Saya</p>
         </div>
       </section>
     </section>

@@ -13,12 +13,12 @@ function ProjectDetailPage() {
     <section className="project-detail-page container">
       <Link className="back-link" to="/work">
         <span className="material-symbols-outlined">arrow_back</span>
-        Back to work
+        Kembali ke project
       </Link>
 
       <div className="project-detail-hero">
         <div className="project-detail-copy">
-          <p className="eyebrow">Project Detail</p>
+          <p className="eyebrow">Detail Project</p>
           <h1>{project.title}</h1>
           <p className="project-detail-summary">{project.summary}</p>
 
@@ -37,20 +37,20 @@ function ProjectDetailPage() {
 
       <div className="project-detail-grid">
         <article className="project-detail-card">
-          <p className="eyebrow">Problem</p>
-          <h2>What needed solving</h2>
+          <p className="eyebrow">Tantangan</p>
+          <h2>Masalah yang ingin diselesaikan</h2>
           <p>{project.problem}</p>
         </article>
 
         <article className="project-detail-card">
-          <p className="eyebrow">Solution</p>
-          <h2>How I approached it</h2>
+          <p className="eyebrow">Solusi</p>
+          <h2>Pendekatan yang saya lakukan</h2>
           <p>{project.solution}</p>
         </article>
 
         <article className="project-detail-card project-detail-card-wide">
           <p className="eyebrow">Stack</p>
-          <h2>Tools used</h2>
+          <h2>Teknologi yang digunakan</h2>
           <div className="project-detail-stack">
             {project.stack.map((item) => (
               <span key={item}>{item}</span>
@@ -59,8 +59,8 @@ function ProjectDetailPage() {
         </article>
 
         <article className="project-detail-card project-detail-card-wide">
-          <p className="eyebrow">Impact</p>
-          <h2>Outcome</h2>
+          <p className="eyebrow">Hasil</p>
+          <h2>Dampak project</h2>
           <p>{project.impact}</p>
         </article>
       </div>

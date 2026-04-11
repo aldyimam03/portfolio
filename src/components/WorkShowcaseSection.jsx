@@ -27,10 +27,14 @@ function ProjectShowcaseCard({ project }) {
 
         <div className="showcase-card-actions">
           <Link to={`/projects/${project.slug}`}>
-            View Project
+            Lihat Project
             <span className="material-symbols-outlined">arrow_forward</span>
           </Link>
-          <a className="showcase-icon-link" href="#contact" aria-label={`Code for ${project.title}`}>
+          <a
+            className="showcase-icon-link"
+            href={siteConfig.socialLinks.github}
+            aria-label={`Lihat kode untuk ${project.title}`}
+          >
             <span className="material-symbols-outlined">code</span>
           </a>
         </div>
@@ -73,7 +77,7 @@ function WorkShowcaseSection() {
         <div className="showcase-blur" aria-hidden="true" />
         <h2>
           {worksPageContent.title.split(worksPageContent.highlight)[0]}
-          <span>{worksPageContent.highlight}</span> {worksPageContent.titleSuffix}{' '}
+          <span> {worksPageContent.highlight}</span> {worksPageContent.titleSuffix}{' '}
         </h2>
         <p>{worksPageContent.description}</p>
         <div className="work-showcase-meta">

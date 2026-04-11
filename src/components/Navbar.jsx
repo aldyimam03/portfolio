@@ -44,7 +44,7 @@ function Navbar() {
           {siteConfig.brand}
         </Link>
 
-        <nav className="desktop-nav" aria-label="Primary">
+        <nav className="desktop-nav" aria-label="Navigasi utama">
           {navLinks.map((link) => (
             <button
               key={link.label}
@@ -56,14 +56,14 @@ function Navbar() {
             </button>
           ))}
           <a className="button button-primary button-small" href={`mailto:${siteConfig.email}`}>
-            Hire Me
+            Hubungi Saya
           </a>
         </nav>
 
         <button
           className="mobile-menu"
           aria-expanded={isOpen}
-          aria-label="Open menu"
+          aria-label="Buka menu"
           onClick={() => setIsOpen((value) => !value)}
           type="button"
         >
@@ -72,7 +72,7 @@ function Navbar() {
       </div>
 
       <div className={`mobile-panel ${isOpen ? 'is-open' : ''}`}>
-        <nav className="mobile-panel-nav" aria-label="Mobile primary">
+        <nav className="mobile-panel-nav" aria-label="Navigasi mobile">
           {navLinks.map((link) => (
             <button
               key={link.label}
@@ -84,7 +84,7 @@ function Navbar() {
             </button>
           ))}
           <a className="button button-primary" href={`mailto:${siteConfig.email}`}>
-            Hire Me
+            Hubungi Saya
           </a>
         </nav>
       </div>

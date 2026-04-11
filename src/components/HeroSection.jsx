@@ -11,7 +11,7 @@ function HeroSection() {
         </div>
 
         <h1>
-          {heroContent.titlePrefix} <span>{heroContent.highlightedName}</span>!{' '}
+          {heroContent.titlePrefix} <span>{heroContent.highlightedName}</span> !{' '}
           {heroContent.titleSuffix}
         </h1>
 
@@ -54,7 +54,7 @@ function HeroSection() {
         <div className="portrait-frame">
           <img
             src={heroContent.portrait}
-            alt="Professional developer portrait in a modern studio"
+            alt="Potret developer profesional di studio modern"
           />
 
           <div className="sprint-card">

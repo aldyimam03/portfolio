@@ -6,11 +6,11 @@ function ProjectsSection() {
     <section className="projects-section container" id="work">
       <div className="section-heading section-heading-inline">
         <div>
-          <h2>Featured Creations</h2>
-          <p>A selection of recent fullstack projects.</p>
+          <h2>Project Unggulan</h2>
+          <p>Pilihan project yang paling mewakili pengalaman dan kemampuan teknis saya.</p>
         </div>
         <Link className="archive-link" to="/work">
-          View Archive
+          Lihat Semua
           <span className="material-symbols-outlined">arrow_forward</span>
         </Link>
       </div>
@@ -29,7 +29,7 @@ function ProjectsSection() {
             <h3>{project.title}</h3>
             <p>{project.description}</p>
             <Link className="project-link" to={`/projects/${project.slug}`}>
-              Read Case Study
+              Lihat Detail
               <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
           </article>
