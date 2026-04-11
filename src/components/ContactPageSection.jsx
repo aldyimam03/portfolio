@@ -1,3 +1,4 @@
+import PlatformIcon from './PlatformIcon'
 import { contactPageContent, siteConfig } from '../data/content'
 
 function ContactPageSection() {
@@ -20,9 +21,7 @@ function ContactPageSection() {
               <div className="contact-page-links">
                 {contactPageContent.socialLinks.map((item) => (
                   <a key={item.label} className="contact-social-card" href={item.href}>
-                    <span className={`material-symbols-outlined accent-${item.tone}`}>
-                      {item.icon}
-                    </span>
+                    <PlatformIcon name={item.icon} className={`platform-icon accent-${item.tone}`} />
                     <span>{item.label}</span>
                   </a>
                 ))}

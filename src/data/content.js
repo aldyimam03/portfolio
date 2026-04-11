@@ -345,17 +345,18 @@ export const contactPageContent = {
   description:
     'Saat ini saya terbuka untuk peluang kerja baru, freelance, maupun kolaborasi project. Kalau kamu ingin berdiskusi atau sekadar menyapa, saya akan senang menerima pesanmu.',
   socialLinks: [
+    { icon: 'github', tone: 'primary', label: 'GitHub', href: 'https://github.com/aldyimam03' },
     {
-      icon: 'terminal',
-      tone: 'primary',
-      label: 'GitHub',
-      href: 'https://github.com/aldyimam03',
-    },
-    {
-      icon: 'link',
+      icon: 'linkedin',
       tone: 'secondary',
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/aldyimamwijaya',
+    },
+    {
+      icon: 'portfolio',
+      tone: 'tertiary',
+      label: 'Portfolio',
+      href: 'https://aldyimam03.github.io/portof-tailwind-css/',
     },
   ],
   resume: {
@@ -388,10 +389,11 @@ export const contactPageContent = {
 }
 
 export const socialIcons = [
-  { icon: 'terminal', href: 'https://github.com/aldyimam03', label: 'GitHub Aldy' },
-  { icon: 'link', href: 'https://www.linkedin.com/in/aldyimamwijaya', label: 'LinkedIn Aldy' },
-  { icon: 'bolt', href: 'mailto:aldyimam03@gmail.com', label: 'Kirim email ke Aldy' },
-  { icon: 'arrow_upward', href: '#home', label: 'Kembali ke atas' },
+  { icon: 'github', href: 'https://github.com/aldyimam03', label: 'GitHub Aldy' },
+  { icon: 'linkedin', href: 'https://www.linkedin.com/in/aldyimamwijaya', label: 'LinkedIn Aldy' },
+  { icon: 'portfolio', href: 'https://aldyimam03.github.io/portof-tailwind-css/', label: 'Portfolio Aldy' },
+  { icon: 'email', href: 'mailto:aldyimam03@gmail.com', label: 'Kirim email ke Aldy' },
+  { icon: 'top', href: '#home', label: 'Kembali ke atas' },
 ]
 
 export const allProjects = [...featuredProjects, ...workShowcaseProjects]

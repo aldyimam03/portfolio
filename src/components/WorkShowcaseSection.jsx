@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import PlatformIcon from './PlatformIcon'
 import {
   featuredExperiment,
   workShowcaseProjects,
@@ -35,7 +36,7 @@ function ProjectShowcaseCard({ project }) {
             href={siteConfig.socialLinks.github}
             aria-label={`Lihat kode untuk ${project.title}`}
           >
-            <span className="material-symbols-outlined">code</span>
+            <PlatformIcon name="github" className="platform-icon" />
           </a>
         </div>
       </div>
@@ -112,14 +113,14 @@ function WorkShowcaseSection() {
 
           <div className="works-cta-actions">
             <a className="button button-primary" href={siteConfig.socialLinks.github}>
-              <span className="material-symbols-outlined">terminal</span>
+              <PlatformIcon name="github" className="platform-icon button-icon" />
               {worksCta.primary}
             </a>
             <a
               className="button button-secondary works-secondary-button"
               href={`mailto:${siteConfig.email}`}
             >
-              <span className="material-symbols-outlined">mail</span>
+              <PlatformIcon name="email" className="platform-icon button-icon" />
               {worksCta.secondary}
             </a>
           </div>

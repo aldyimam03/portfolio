@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import PlatformIcon from './PlatformIcon'
 import { siteConfig, socialIcons } from '../data/content'
 
 function Footer() {
@@ -17,7 +18,7 @@ function Footer() {
         <div className="footer-socials" aria-label="Tautan sosial">
           {socialIcons.map((item) => (
             <a key={item.icon} href={item.href} aria-label={item.label}>
-              <span className="material-symbols-outlined">{item.icon}</span>
+              <PlatformIcon name={item.icon} className="platform-icon" />
             </a>
           ))}
         </div>
