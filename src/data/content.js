@@ -361,8 +361,10 @@ export const contactPageContent = {
   ],
   resume: {
     title: 'Unduh CV',
-    updated: 'Update terbaru: CV Laravel sementara',
-    cta: 'Resume.pdf',
+    updated: 'CV ATS Laravel Developer versi English',
+    cta: 'Download CV',
+    href: '/CV-ATS-Laravel-Developer-Aldy-Imam-Wijaya-English.pdf',
+    fileName: 'CV-ATS-Laravel-Developer-Aldy-Imam-Wijaya-English.pdf',
   },
   form: {
     fields: {
@@ -383,6 +385,12 @@ export const contactPageContent = {
       'Sekadar Menyapa',
     ],
     submit: 'Kirim Pesan',
+    sending: 'Mengirim...',
+    success: 'Pesan berhasil dikirim. Terima kasih, saya akan membalas secepatnya.',
+    fallback:
+      'Form endpoint belum diatur, jadi pesan dibuka melalui email agar tetap bisa dikirim.',
+    error:
+      'Pesan belum bisa dikirim otomatis. Silakan kirim langsung melalui email.',
   },
   responseNote: 'Rata-rata respon: < 24 jam',
   footerBadge: 'Masih berbasis CV Laravel sementara, versi global akan saya lengkapi berikutnya.',

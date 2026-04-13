@@ -85,6 +85,57 @@ function CustomSelect({ id, label, options, defaultValue }) {
 }
 
 function ContactPageSection() {
+  const [submitStatus, setSubmitStatus] = useState('idle')
+  const [submitMessage, setSubmitMessage] = useState('')
+  const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT
+
+  async function handleSubmit(event) {
+    event.preventDefault()
+
+    const formData = new FormData(event.currentTarget)
+    const fullName = formData.get('fullName')
+    const emailAddress = formData.get('emailAddress')
+    const helpTopic = formData.get('helpTopic')
+    const message = formData.get('message')
+
+    setSubmitStatus('sending')
+    setSubmitMessage('')
+
+    if (formEndpoint) {
+      try {
+        const response = await fetch(formEndpoint, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            Accept: 'application/json',
+          },
+        })
+
+        if (!response.ok) {
+          throw new Error('Contact form request failed')
+        }
+
+        event.currentTarget.reset()
+        setSubmitStatus('success')
+        setSubmitMessage(contactPageContent.form.success)
+        return
+      } catch {
+        setSubmitStatus('error')
+        setSubmitMessage(contactPageContent.form.error)
+        return
+      }
+    }
+
+    const subject = encodeURIComponent(`[Portfolio] ${helpTopic}`)
+    const body = encodeURIComponent(
+      `Nama: ${fullName}\nEmail: ${emailAddress}\nKeperluan: ${helpTopic}\n\nPesan:\n${message}`,
+    )
+
+    window.location.href = `${siteConfig.socialLinks.email}?subject=${subject}&body=${body}`
+    setSubmitStatus('fallback')
+    setSubmitMessage(contactPageContent.form.fallback)
+  }
+
   return (
     <section className="contact-page">
       <div className="contact-pattern" aria-hidden="true" />
@@ -120,17 +171,21 @@ function ContactPageSection() {
                   <p>{contactPageContent.resume.updated}</p>
                 </div>
 
-                <button className="button button-primary resume-button" type="button">
+                <a
+                  className="button button-primary resume-button"
+                  href={contactPageContent.resume.href}
+                  download={contactPageContent.resume.fileName}
+                >
                   <span className="material-symbols-outlined">download</span>
                   {contactPageContent.resume.cta}
-                </button>
+                </a>
               </div>
             </div>
           </div>
 
           <div className="contact-page-main">
             <div className="contact-form-shell">
-              <form className="contact-form-grid">
+              <form className="contact-form-grid" onSubmit={handleSubmit}>
                 <div className="contact-form-two-up">
                   <div className="field-group">
                     <label htmlFor="fullName">
@@ -140,6 +195,7 @@ function ContactPageSection() {
                       id="fullName"
                       name="fullName"
                       placeholder={contactPageContent.form.placeholder.name}
+                      required
                       type="text"
                     />
                   </div>
@@ -152,6 +208,7 @@ function ContactPageSection() {
                       id="emailAddress"
                       name="emailAddress"
                       placeholder={contactPageContent.form.placeholder.email}
+                      required
                       type="email"
                     />
                   </div>
@@ -172,12 +229,27 @@ function ContactPageSection() {
                     id="message"
                     name="message"
                     placeholder={contactPageContent.form.placeholder.message}
+                    required
                     rows="6"
                   />
                 </div>
 
-                <button className="button button-primary contact-submit" type="submit">
-                  <span>{contactPageContent.form.submit}</span>
+                {submitMessage ? (
+                  <p className={`form-status form-status-${submitStatus}`} role="status">
+                    {submitMessage}
+                  </p>
+                ) : null}
+
+                <button
+                  className="button button-primary contact-submit"
+                  disabled={submitStatus === 'sending'}
+                  type="submit"
+                >
+                  <span>
+                    {submitStatus === 'sending'
+                      ? contactPageContent.form.sending
+                      : contactPageContent.form.submit}
+                  </span>
                   <span className="material-symbols-outlined">send</span>
                 </button>
               </form>

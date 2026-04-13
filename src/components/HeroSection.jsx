@@ -25,9 +25,9 @@ function HeroSection() {
           <Link className="button button-primary" to={heroContent.primaryCta.to}>
             {heroContent.primaryCta.label}
           </Link>
-          <a className="button button-secondary" href={heroContent.secondaryCta.to}>
+          <Link className="button button-secondary" to={heroContent.secondaryCta.to}>
             {heroContent.secondaryCta.label}
-          </a>
+          </Link>
         </div>
       </div>
 

@@ -1751,6 +1751,37 @@ img {
   font-size: 1.02rem;
 }
 
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.form-status {
+  margin: 0;
+  padding: 14px 18px;
+  border-radius: 18px;
+  color: var(--text);
+  background: rgba(238, 242, 245, 0.92);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.form-status-success {
+  color: #0f5e2e;
+  background: rgba(109, 254, 156, 0.26);
+}
+
+.form-status-fallback {
+  color: #0a4c66;
+  background: rgba(155, 218, 255, 0.38);
+}
+
+.form-status-error {
+  color: #9f1239;
+  background: rgba(251, 113, 133, 0.14);
+}
+
 .response-chip {
   display: flex;
   width: 100%;
@@ -1877,6 +1908,38 @@ img {
 
 .project-detail-card-wide {
   grid-column: 1 / -1;
+}
+
+.not-found-page {
+  display: grid;
+  justify-items: start;
+  min-height: 58vh;
+  padding: 72px 0 96px;
+  align-content: center;
+}
+
+.not-found-page h1 {
+  max-width: 12ch;
+  margin: 0 0 18px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.not-found-page p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
 }
 
 .project-detail-stack {
@@ -2086,6 +2149,11 @@ img {
 
   .contact-submit {
     width: 100%;
+  }
+
+  .not-found-actions {
+    width: 100%;
+    flex-direction: column;
   }
 
   .response-chip {
