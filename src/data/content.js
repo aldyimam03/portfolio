@@ -212,25 +212,25 @@ export const workShowcaseProjects = [
     year: '2025',
   },
   {
-    slug: 'api-inventory-tools',
-    title: 'API Inventory & Tool Loan',
-    tags: ['Laravel 12', 'REST API', 'Swagger'],
-    stack: ['Laravel 12', 'REST API', 'Swagger', 'Relational Validation'],
+    slug: 'service-app-api',
+    title: 'Service App API',
+    tags: ['Node.js', 'Express.js', 'MySQL'],
+    stack: ['Node.js', 'Express.js', 'MySQL', 'JWT', 'Joi', 'Helmet', 'bcryptjs'],
     description:
-      'Kumpulan endpoint REST API untuk sistem inventaris dan peminjaman alat internal perusahaan.',
+      'REST API untuk sistem pemesanan servis kendaraan dengan autentikasi dealer, manajemen jadwal, dan tracking status booking.',
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuA7HGQGcZkRursVv7aDnpay5wGqjyDz6Zd4_YvJWrM_84tjOWz3lFOUWrNkItYt_jbcoCbZQEKvrkXqWs07SnO29J9AiSTDpRd3NAgqMQ3U80UZhopSg0HAiLP88REK8KVEjMWvn8GFwm3nBKMTOjmHV-JsWlzUM42o_J3uc9vA_zsfC-ZimpByQjGd0oVVO2q65He_QP2Zn-atuVU5TQroQFe2qyYQ7c8UPQag6-WUXVbnHqO-9WIwrbNolkImJxqhmYvJ74Sikoc',
-    alt: 'Endpoint API dan dokumentasi backend',
+    alt: 'Dokumentasi API sistem pemesanan servis kendaraan',
     badge: 'Public',
     repoUrl: 'https://github.com/aldyimam03/service-app-api',
     summary:
-      'Pengembangan API internal untuk mendukung integrasi frontend dan monitoring inventaris alat.',
+      'Backend API untuk pemesanan servis kendaraan, pengelolaan jadwal dealer, autentikasi JWT, dan status booking.',
     problem:
-      'Tim membutuhkan backend yang mampu menangani data branch, item, variant, serta request alat secara terstruktur.',
+      'Sistem servis kendaraan membutuhkan API yang bisa menangani booking customer, kuota jadwal, status pemesanan, dan akses dealer secara terstruktur.',
     solution:
-      'Saya mengembangkan lebih dari 20 endpoint API menggunakan Laravel 12 dan mendokumentasikannya dengan Swagger agar mudah digunakan tim frontend.',
+      'Saya mengembangkan REST API menggunakan Node.js, Express.js, dan MySQL dengan JWT authentication, validasi Joi, security header Helmet, hashing password bcryptjs, serta struktur controller dan model.',
     impact:
-      'Integrasi frontend menjadi lebih lancar dan tim memiliki acuan dokumentasi API yang lebih jelas.',
+      'API mendukung alur booking H+1, pengecekan status berdasarkan nomor telepon, pengelolaan jadwal dealer, perubahan status booking, statistik pemesanan, dan dokumentasi Postman.',
     year: '2025',
   },
   {
