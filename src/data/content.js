@@ -94,27 +94,27 @@ export const skillsPageContent = {
 }
 
 export const frontendSkillBubbles = [
-  { icon: 'code', colorClass: 'is-blue', label: 'HTML' },
-  { icon: 'style', colorClass: 'is-cyan', label: 'Tailwind CSS' },
-  { icon: 'javascript', colorClass: 'is-yellow', label: 'JavaScript Dasar' },
-  { icon: 'dashboard', colorClass: 'is-pink', label: 'Blade / UI Internal' },
-  { icon: 'api', colorClass: 'is-orange', label: 'Integrasi API' },
+  { icon: 'html', colorClass: 'is-html', label: 'HTML' },
+  { icon: 'tailwind', colorClass: 'is-tailwind', label: 'Tailwind CSS' },
+  { icon: 'javascript', colorClass: 'is-javascript', label: 'JavaScript Dasar' },
+  { icon: 'blade', colorClass: 'is-blade', label: 'Blade / UI Internal' },
+  { icon: 'api', colorClass: 'is-api', label: 'Integrasi API' },
 ]
 
 export const backendSkills = [
-  { icon: 'settings_ethernet', label: 'Laravel / PHP' },
-  { icon: 'database', label: 'MySQL' },
-  { icon: 'dns', label: 'SQL Server' },
-  { icon: 'shield_lock', label: 'Autentikasi Role' },
+  { icon: 'laravel', label: 'Laravel / PHP' },
+  { icon: 'mysql', label: 'MySQL' },
+  { icon: 'sqlserver', label: 'SQL Server' },
+  { icon: 'auth', label: 'Autentikasi Role' },
 ]
 
 export const toolPills = [
-  'Git & GitHub',
-  'Postman',
-  'Swagger',
-  'PHPUnit Dasar',
-  'REST API',
-  'Eloquent ORM',
+  { icon: 'git-github', label: 'Git & GitHub' },
+  { icon: 'postman', label: 'Postman' },
+  { icon: 'swagger', label: 'Swagger' },
+  { icon: 'phpunit', label: 'PHPUnit Dasar' },
+  { icon: 'rest-api', label: 'REST API' },
+  { icon: 'eloquent', label: 'Eloquent ORM' },
 ]
 
 export const glassStackCards = [

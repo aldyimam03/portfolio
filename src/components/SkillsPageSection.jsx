@@ -5,6 +5,7 @@ import {
   skillsPageContent,
   toolPills,
 } from '../data/content'
+import PlatformIcon from './PlatformIcon'
 
 function SkillsDivider({ title, tone = 'primary', reverse = false }) {
   return (
@@ -66,9 +67,7 @@ function SkillsPageSection() {
           <div className="frontend-bubbles">
             {frontendSkillBubbles.map((bubble) => (
               <article key={bubble.label} className="frontend-bubble">
-                <span className={`material-symbols-outlined ${bubble.colorClass}`}>
-                  {bubble.icon}
-                </span>
+                <PlatformIcon name={bubble.icon} className={`tech-icon ${bubble.colorClass}`} />
                 <span>{bubble.label}</span>
               </article>
             ))}
@@ -81,7 +80,7 @@ function SkillsPageSection() {
             {backendSkills.map((skill) => (
               <article key={skill.label} className="backend-skill-card">
                 <span>{skill.label}</span>
-                <span className="material-symbols-outlined">{skill.icon}</span>
+                <PlatformIcon name={skill.icon} className="tech-icon" />
               </article>
             ))}
           </div>
@@ -91,8 +90,9 @@ function SkillsPageSection() {
           <SkillsDivider title="Tools Yang Saya Pakai" tone="tertiary" />
           <div className="tool-pill-grid">
             {toolPills.map((tool) => (
-              <span key={tool} className="tool-pill">
-                {tool}
+              <span key={tool.label} className="tool-pill">
+                <PlatformIcon name={tool.icon} className="tech-icon" />
+                {tool.label}
               </span>
             ))}
           </div>
