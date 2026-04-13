@@ -161,6 +161,8 @@ export const featuredProjects = [
     impact:
       'Sistem menjadi lebih terstruktur, data inventaris lebih mudah dikelola, dan alur permintaan alat lebih jelas untuk pengguna internal.',
     year: '2025',
+    badge: 'Public',
+    repoUrl: 'https://github.com/aldyimam03/inventory-web',
   },
   {
     slug: 'web-sales',
@@ -181,6 +183,8 @@ export const featuredProjects = [
     impact:
       'Proses transaksi menjadi lebih terpusat dan data penjualan harian dapat dipantau dengan lebih mudah.',
     year: '2025',
+    badge: 'Public',
+    repoUrl: 'https://github.com/aldyimam03/web-sales',
   },
 ]
 
@@ -196,6 +200,7 @@ export const workShowcaseProjects = [
       'https://lh3.googleusercontent.com/aida-public/AB6AXuDDiflzZtk6SKcetEA4bzX2royqs13XUotbrucLJ-_q4ApaD9lqt9tQD3f4tqi_hAzkscgPvTWPrcMeDV9y5d6K6OWlx0TDRYHnt3p_QFDNH_W3AAJ_98dJCtkw1xYK5fmqCD6N7g1tQyXfzdoE3cywekZarATcu3lifD-lnyZZm5m4sThJ2WCs8xL0vh3ezg5-QIWOMqRJxlsO9WR58DVqH0Ojzw-bT8R9E0GO8EHiHAjtOY2TAWxwGTWGs5Lqruj8pGdpM-0NDes',
     alt: 'Portal client berbasis web untuk pelanggan',
     badge: 'Private',
+    repoUrl: null,
     summary:
       'Portal pelanggan yang memudahkan akses data akun dan layanan dalam satu dashboard.',
     problem:
@@ -216,6 +221,8 @@ export const workShowcaseProjects = [
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuA7HGQGcZkRursVv7aDnpay5wGqjyDz6Zd4_YvJWrM_84tjOWz3lFOUWrNkItYt_jbcoCbZQEKvrkXqWs07SnO29J9AiSTDpRd3NAgqMQ3U80UZhopSg0HAiLP88REK8KVEjMWvn8GFwm3nBKMTOjmHV-JsWlzUM42o_J3uc9vA_zsfC-ZimpByQjGd0oVVO2q65He_QP2Zn-atuVU5TQroQFe2qyYQ7c8UPQag6-WUXVbnHqO-9WIwrbNolkImJxqhmYvJ74Sikoc',
     alt: 'Endpoint API dan dokumentasi backend',
+    badge: 'Public',
+    repoUrl: 'https://github.com/aldyimam03/service-app-api',
     summary:
       'Pengembangan API internal untuk mendukung integrasi frontend dan monitoring inventaris alat.',
     problem:
@@ -236,6 +243,8 @@ export const workShowcaseProjects = [
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuCSxFdHWtPqAUiOLU19ACUqUREkDbKfi_C8eMePuuPw3NdeRzSE29ZFb9n51iocCWk04zkGrPPGLi7PvMTNKLl3hPo8E1-L-qajiMeVN7g8JeEVFrjRAaWK7mkMUrfXHD8Hc5lplux_2vziIVebR_qpfS2Gn-20qNNlj2U2eEXKD-ufAIrEMXhed2E-OU0iywCTWBqY7MiIAZyc00kBBhWE-gxDvpgHE5NJZT9lVFsFxLeXvwTrlCOsg1Y9bi6pNq_7mNBUW50vje8',
     alt: 'Dashboard sistem absensi HRIS',
+    badge: 'Private',
+    repoUrl: null,
     summary:
       'Sistem internal perusahaan untuk pengelolaan absensi karyawan dan approval cuti.',
     problem:
@@ -256,6 +265,8 @@ export const workShowcaseProjects = [
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuBkeFQIFVkZVi4_4_l1v6x77ifE8-r1JW89D7m-k-0LAAnMIfEQsv_Kq9Hv22IlWvIW94tyy2OTj9BnzviV8jJ2W7YfL502u-e2-zdnEj7q739tzYLQig01DvyyQs4dryV9CP8x5srDFuspbOsz_bPzTNEgA6gpUlmHQ0Kj8ZbLxW5gWCkGFvkJWZU4s__eLS86GQXNJVwMToWcq-sPic6f4XgQ3BL9xepgn0yQQfikvTJIUBiA162Uzkc4YTAkMCjttGzFEmlixJg',
     alt: 'Sistem internal untuk pelacakan ticket',
+    badge: 'Private',
+    repoUrl: null,
     summary:
       'Project yang sedang dikembangkan untuk membantu tim memonitor request dan progres pekerjaan.',
     problem:
@@ -276,6 +287,8 @@ export const workShowcaseProjects = [
     image:
       'https://lh3.googleusercontent.com/aida-public/AB6AXuD8DD16f403gBXtWityb2pTF8QaA_Ztlpv1TpENVfSKsqby8uztdfV0yFPhxQVc9eTHlkDpXzssuf_5IQfqApojrHfXsWG3r4YwCiUMWX7gWlx4fm3ojSVwcNRbZ516e_B_iUcwBLUz_FX5G-bKZ2qmXkmOIn9B1J-gBkIO4XWoVTUZ1nImUdP496CkpdjkpMa5wkktaO9NQx5Aj1qYBg8bHM1QaOMJUOF6AFlIrTF8_EC6ecRBZEr1IzNn1AwD7yAEphAp5AmQ0qg',
     alt: 'Aktivitas maintenance dan enhancement aplikasi',
+    badge: 'Private',
+    repoUrl: null,
     summary:
       'Fokus pada perbaikan bug, penyesuaian fitur, dan pengembangan tambahan berdasarkan kebutuhan user.',
     problem:

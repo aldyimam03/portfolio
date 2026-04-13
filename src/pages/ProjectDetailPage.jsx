@@ -24,10 +24,23 @@ function ProjectDetailPage() {
 
           <div className="project-detail-meta">
             <span>{project.year}</span>
+            {project.badge ? <span>{project.badge}</span> : null}
             {project.tags.map((tag) => (
               <span key={tag}>{tag}</span>
             ))}
           </div>
+
+          {project.repoUrl ? (
+            <a
+              className="button button-secondary project-detail-repo"
+              href={project.repoUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Lihat Repository
+              <span className="material-symbols-outlined">open_in_new</span>
+            </a>
+          ) : null}
         </div>
 
         <div className="project-detail-image">

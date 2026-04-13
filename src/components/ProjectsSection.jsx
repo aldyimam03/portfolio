@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import PlatformIcon from './PlatformIcon'
 import { featuredProjects } from '../data/content'
 
 function ProjectsSection() {
@@ -20,6 +21,7 @@ function ProjectsSection() {
           <article key={project.title} className="project-card">
             <div className="project-image">
               <img src={project.image} alt={project.alt} />
+              {project.badge ? <span className="showcase-badge">{project.badge}</span> : null}
             </div>
             <div className="project-tags">
               {project.tags.map((tag) => (
@@ -28,10 +30,23 @@ function ProjectsSection() {
             </div>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
-            <Link className="project-link" to={`/projects/${project.slug}`}>
-              Lihat Detail
-              <span className="material-symbols-outlined">arrow_forward</span>
-            </Link>
+            <div className="project-card-actions">
+              <Link className="project-link" to={`/projects/${project.slug}`}>
+                Lihat Detail
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </Link>
+              {project.repoUrl ? (
+                <a
+                  className="showcase-icon-link"
+                  href={project.repoUrl}
+                  aria-label={`Lihat repository ${project.title}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <PlatformIcon name="github" className="platform-icon" />
+                </a>
+              ) : null}
+            </div>
           </article>
         ))}
       </div>

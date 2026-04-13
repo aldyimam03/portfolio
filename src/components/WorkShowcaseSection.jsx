@@ -9,6 +9,10 @@ import {
 } from '../data/content'
 
 function ProjectShowcaseCard({ project }) {
+  const repoLabel = project.repoUrl
+    ? `Lihat repository ${project.title}`
+    : `Repository ${project.title} bersifat private`
+
   return (
     <article className="showcase-card">
       <div className="showcase-card-media">
@@ -31,13 +35,21 @@ function ProjectShowcaseCard({ project }) {
             Lihat Project
             <span className="material-symbols-outlined">arrow_forward</span>
           </Link>
-          <a
-            className="showcase-icon-link"
-            href={siteConfig.socialLinks.github}
-            aria-label={`Lihat kode untuk ${project.title}`}
-          >
-            <PlatformIcon name="github" className="platform-icon" />
-          </a>
+          {project.repoUrl ? (
+            <a
+              className="showcase-icon-link"
+              href={project.repoUrl}
+              aria-label={repoLabel}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <PlatformIcon name="github" className="platform-icon" />
+            </a>
+          ) : (
+            <span className="showcase-icon-link is-disabled" aria-label={repoLabel} role="img">
+              <PlatformIcon name="github" className="platform-icon" />
+            </span>
+          )}
         </div>
       </div>
     </article>
