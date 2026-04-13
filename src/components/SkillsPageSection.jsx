@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   backendSkills,
   frontendSkillBubbles,
@@ -17,7 +18,27 @@ function SkillsDivider({ title, tone = 'primary', reverse = false }) {
   )
 }
 
+function getStackPosition(index, activeIndex, totalCards) {
+  const position = (index - activeIndex + totalCards) % totalCards
+
+  if (position === 0) return 'front'
+  if (position === 1) return 'middle'
+  return 'back'
+}
+
 function SkillsPageSection() {
+  const [activeStackCard, setActiveStackCard] = useState(0)
+
+  function showPreviousCard() {
+    setActiveStackCard((current) =>
+      current === 0 ? glassStackCards.length - 1 : current - 1,
+    )
+  }
+
+  function showNextCard() {
+    setActiveStackCard((current) => (current + 1) % glassStackCards.length)
+  }
+
   return (
     <section className="skills-page container">
       <header className="skills-page-hero">
@@ -106,17 +127,52 @@ function SkillsPageSection() {
         </div>
 
         <div className="glass-stack-stage">
-          {glassStackCards.map((card) => (
-            <article key={card.title} className={`glass-stack-card ${card.className}`}>
-              <span className={`material-symbols-outlined accent-${card.accent}`}>
-                {card.icon}
-              </span>
-              <div>
-                <h4>{card.title}</h4>
-                <p>{card.description}</p>
-              </div>
-            </article>
-          ))}
+          {glassStackCards.map((card, index) => {
+            const stackPosition = getStackPosition(
+              index,
+              activeStackCard,
+              glassStackCards.length,
+            )
+            const isActive = stackPosition === 'front'
+
+            return (
+              <button
+                key={card.title}
+                className={`glass-stack-card is-${stackPosition}`}
+                type="button"
+                aria-label={`Lihat ${card.title}`}
+                aria-pressed={isActive}
+                onClick={() => setActiveStackCard(index)}
+              >
+                <span className={`material-symbols-outlined accent-${card.accent}`}>
+                  {card.icon}
+                </span>
+                <span>
+                  <span className="glass-stack-card-title">{card.title}</span>
+                  <span className="glass-stack-card-description">{card.description}</span>
+                </span>
+              </button>
+            )
+          })}
+        </div>
+
+        <div className="glass-stack-controls" aria-label="Navigasi fondasi kerja fullstack">
+          <button type="button" onClick={showPreviousCard} aria-label="Lihat kartu sebelumnya">
+            <span className="material-symbols-outlined">arrow_back</span>
+          </button>
+
+          <div className="glass-stack-dots" aria-hidden="true">
+            {glassStackCards.map((card, index) => (
+              <span
+                key={card.title}
+                className={activeStackCard === index ? 'is-active' : ''}
+              />
+            ))}
+          </div>
+
+          <button type="button" onClick={showNextCard} aria-label="Lihat kartu berikutnya">
+            <span className="material-symbols-outlined">arrow_forward</span>
+          </button>
         </div>
 
         <div className="glass-stack-footer">

@@ -1047,27 +1047,61 @@ img {
   flex-direction: column;
   justify-content: space-between;
   padding: 30px;
+  color: var(--text);
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 28px;
   box-shadow: var(--shadow);
-  transition: transform 500ms ease;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 500ms ease,
+    opacity 300ms ease,
+    box-shadow 300ms ease;
 }
 
-.glass-stack-card:hover {
-  transform: translateY(-20px);
+.glass-stack-card.is-front {
+  z-index: 30;
+  opacity: 1;
+  transform: translateX(-42px) translateY(24px) rotate(-1deg);
 }
 
-.glass-stack-card h4 {
+.glass-stack-card.is-middle {
+  z-index: 20;
+  opacity: 0.78;
+  transform: translateX(24px) translateY(-8px) scale(0.94) rotate(2deg);
+}
+
+.glass-stack-card.is-back {
+  z-index: 10;
+  opacity: 0.58;
+  transform: translateX(86px) translateY(30px) scale(0.88) rotate(4deg);
+}
+
+.glass-stack-card.is-front:hover,
+.glass-stack-card.is-front:focus-visible {
+  box-shadow: 0 28px 70px rgba(74, 85, 104, 0.18);
+  transform: translateX(-42px) translateY(10px) rotate(-1deg);
+}
+
+.glass-stack-card:focus-visible {
+  outline: 3px solid rgba(107, 57, 214, 0.36);
+  outline-offset: 4px;
+}
+
+.glass-stack-card-title {
+  display: block;
   margin: 0 0 10px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.75rem;
+  font-weight: 800;
   letter-spacing: -0.03em;
 }
 
-.glass-stack-card p,
+.glass-stack-card-description,
 .glass-stack-footer p {
+  display: block;
   margin: 0;
   color: var(--text-muted);
 }
@@ -1089,6 +1123,64 @@ img {
 .stack-card-front {
   z-index: 30;
   transform: translate(-32px, 32px);
+}
+
+.glass-stack-controls {
+  position: absolute;
+  bottom: 82px;
+  left: 50%;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  transform: translateX(-50%);
+}
+
+.glass-stack-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.glass-stack-controls button:hover,
+.glass-stack-controls button:focus-visible {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.glass-stack-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: var(--shadow-soft);
+}
+
+.glass-stack-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(97, 101, 104, 0.28);
+  transition:
+    width 180ms ease,
+    background-color 180ms ease;
+}
+
+.glass-stack-dots .is-active {
+  width: 24px;
+  background: var(--primary);
 }
 
 .glass-stack-footer {
@@ -2227,7 +2319,7 @@ img {
   }
 
   .glass-stack-section {
-    min-height: 540px;
+    min-height: 600px;
     margin-top: 96px;
   }
 
@@ -2238,6 +2330,27 @@ img {
 
   .glass-stack-card {
     padding: 22px;
+  }
+
+  .glass-stack-card.is-front {
+    transform: translateX(-14px) translateY(24px) rotate(-1deg);
+  }
+
+  .glass-stack-card.is-middle {
+    transform: translateX(18px) translateY(-4px) scale(0.93) rotate(2deg);
+  }
+
+  .glass-stack-card.is-back {
+    transform: translateX(48px) translateY(26px) scale(0.86) rotate(4deg);
+  }
+
+  .glass-stack-card.is-front:hover,
+  .glass-stack-card.is-front:focus-visible {
+    transform: translateX(-14px) translateY(12px) rotate(-1deg);
+  }
+
+  .glass-stack-controls {
+    bottom: 92px;
   }
 
   .stack-card-back {
